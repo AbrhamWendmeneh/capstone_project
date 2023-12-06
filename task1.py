@@ -12,7 +12,8 @@ dp= Dispatcher()
 
 @dp.message(CommandStart())
 async def cmd_message(msg: types.Message):
-    await msg.answer('Hellow world gt')
+    await msg.answer('Hello world!')  
+    
 
 
 async def main():
