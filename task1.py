@@ -4,7 +4,7 @@ from aiogram.filters import CommandStart, Command
 import asyncio
 import os
 
-load_dotenv('.env')
+load_dotenv('1.env')
 token= os.getenv('TOKEN_API')
 bot= Bot(token)
 
