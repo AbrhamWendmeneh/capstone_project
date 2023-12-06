@@ -4,8 +4,8 @@ from aiogram.filters import CommandStart, Command
 import asyncio
 import os
 
-load_dotenv('1.env')
-token= os.getenv('TOKEN_API')
+load_dotenv('.env')
+token= os.getenv('TOKEN_API_2')
 bot= Bot(token)
 
 dp= Dispatcher()
