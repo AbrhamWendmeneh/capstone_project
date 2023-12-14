@@ -25,7 +25,7 @@ class Form(StatesGroup):
 load_dotenv('.env')
 token=os.getenv('TOKEN_API_2')
 bot= Bot(token)
-dp=Dispatcher()
+dp=Dispatcher()      
 form_router = Router()
     
 
@@ -38,7 +38,7 @@ async def cmd_start(msg: types.Message, state: FSMContext):
                     )
     
     
-@form_router.message(Command("Cancel"))
+@form_router.message(Command("cancel"))
 @form_router.message(F.text.casefold()=="cancel")
 async def cmd_cancel(msg: types.Message, state: FSMContext):
     curr_state_val= await state.get_state()
@@ -97,7 +97,7 @@ async def take_age(msg: types.Message, state:FSMContext):
 async def take_email(msg: types.Message, state:FSMContext):
     result=await state.update_data(email= msg.text)
     await form_summary(msg= msg, result=result)
-    await state.finish()
+    # await state.finish()
     
 async def form_summary(msg: types.Message, result: Dict[str,Any]):
     fullName= result['fullName']
